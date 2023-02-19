@@ -7,56 +7,401 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title> Futbol Gratis</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-<link rel="stylesheet" href="styles.css">
+<!--link rel="stylesheet" href="styles.css"-->
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 <meta name="google-site-verification" content="OF_KGAtKr-ZN82aA_DJxo7W_rKcHOHCENI41g22OTLE" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="Logo.png">
 <style>
+	*{
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
 	body{
 		background-color: #000000;
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='105' viewBox='0 0 80 105'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='death-star' fill='%23620000' fill-opacity='0.52'%3E%3Cpath d='M20 10a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm15 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zM20 75a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zm30-65a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm0 65a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zM35 10a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zM5 45a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zm60 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 		color:white;
 		font-family: 'Oswald', sans-serif;
 	}
-		.Tabla{
-			display: grid;
-			grid-template-columns: repeat(3, 5fr);
-		}
-		.Tabla ul {
-			padding: 25px;
-			margin: -10px;
-			height: auto;
-		}
-		.Tabla ul h4{
-			font-size: 30px;
-		}
-		.Tabla ul a{
-			font-size: 20px;
-		}
-		.Mundial a:hover{
-			border-bottom: 2px solid #ffffff;
-		}
-		.LaLiga a:hover{
-			border-bottom: 2px solid #ffffff;
-		}
-		.Champions a:hover{
-			border-bottom: 2px solid #ffffff;
-		}
-		.DAZN a:hover{
-			border-bottom: 2px solid #ffffff;
-		}
-		.Deportes a:hover{
-			border-bottom: 2px solid #FFFFFF;
-		}
-		.Acestream{
-			font-size: 20px;
-		}
-		.Acestream a:hover{
-			border-bottom: 2px solid #ffffff;
+	a{
+		color: white;
+		text-decoration: none;
+		
+	}
+	ul{
+		list-style: none;
+		display: inline-block;
+	}
+	.menu-btn{
+		position: absolute;
+		cursor: pointer;
+		top: 15px;
+		right: 30px;
+		z-index: 2;
+		font-size: 1.5rem;
+		display: none;
+	}
+	.continer{
+		width: 90%;
+		margin: auto;
+	}
+	.nav-main{
+		font-size: 17px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 60px;
+		padding: 20px 0;
+	}
 
-		}
+	.nav-brand{
+		width: 70px;
+	}
+
+	/*Nav-continer*/
+	.nav-main ul{
+		display: flex;
+	}
+	.nav-main ul li{
+		padding: 20px;
+	}
+	.nav-main ul.nav-menu{
+		flex: 1;
+		margin-left: 20px;
+	}
+	.nav-main ul li a:hover{
+		border-bottom: 2px solid #ffffff;
+	}
+	.showcase{
+		width:100%;
+		height: 700px;
+		background: url("./imagenes/Elbicho.png") no-repeat center center/cover;
+		padding: 50px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-end;
+		font-size: 30px;
+		margin-bottom:20px;
+		text-align: center;
+		
+	}
+	.showcase h2{
+		background: #808080;
+	}
+	.showcase p{
+		margin: 0 auto;
+		background: #808080;
+	}
+	.showcase a:hover{
+		text-decoration: underline;
+	}
+
+	hr{
+		margin: 10px 0;
+	}
+	/*boton*/
+	.btn{
+		cursor: pointer;
+		display: inline-block;
+		border: 0;
+		padding: 10px 20px;
+		font-weight: bold;
+		background:#262626;
+		color: #ffffff;
+		font-size: 15px;
+		border: 1px solid #ffffff;
+
+	}
+	/*noticias*/
+	.noticias{
+		display: grid;
+	}
+
+	/*Artículo Ayuso*/
+	.ayuso{
+		width:100%;
+		height: 600px;
+		padding:0;
+		align-content: center;
+	}
+	.ayuso header h1{
+		font-size: 65px;
+		text-align: center;
+	}
+	.ayuso p{
+		font-size: 30px;
+	}
+	.ayuso img{
+		width: 100%;
+	}
+
+	.ayuso h3{
+		font-size: 42px;
+		font-family: sans-serif;
+	}
+	.ayuso img.ayuso-img2{
+		width: 70%;
+		height:744.8px 378.7px;
+	}
+	/*Artículos*/
+	.articulos{
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 15px;
+	}
+	.articulos h3{
+		font-size: 21.5px;
+	}
+	.articulos img{
+		width: 70%;
+		height: auto;
+	}
+	.articulos a{
+		padding: 10px 0;
+		text-transform: uppercase;
+		color: #f2f2f2f2;
+		display: inline-block;
+		font-weight: bold;
+	}
+	.articulos a:hover{
+		text-decoration: underline;
+	}
+	.realmadrid{
+		width: 100%;
+		height:600px;
+		padding: 0;
+		align-content: center;
+	}
+	.realmadrid header h1{
+		font-size: 65px;
+		text-align: center;
+	}
+	.realmadrid p{
+		font-size: 30px;
+	}
+	.realmadrid img{
+		width: 100%;
+	}
+	/*Social*/
+	.social p{
+		text-align: center;
+		font-size: 30px;
+		margin: 20px;
+	}
+	.links{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.links a{
+		margin: 0 30px;
+	}
+	.links a i{
+		font-size: 3rem;
+	}
+	/*Cadiz*/
+	.cadiz{
+		width:100%;
+		height: 600px;
+		padding:0;
+		align-content: center;
+	}
+	.cadiz header h1{
+		font-size: 65px;
+		text-align: center;
+	}
+	.cadiz p1{
+		font-size: 30px;
+	}
+	.cadiz p1 img{
+		width: 100%;
+	}
+	.cadiz p2{
+		font-size: 30px;
+	}
+	.cadiz h3{
+		font-size: 42px;
+		font-family: sans-serif;
+	}
+	/*Directo*/
+	.boton a img{
+		width: 70px;
+		display: inline-block;
+		padding: 10px;
+		align-items: center;
+		margin: 0;
+	}
+	/*España en semifinales*/
+	.Espana{
+		width:100%;
+		height: 600px;
+		padding:0;
+		align-content: center;
+	}
+	.Espana header h1{
+		font-size: 65px;
+		text-align: center;
+	}
+	.Espana p1{
+		font-size: 30px;
+	}
+	.Espana p1 img{
+		width: 100%;
+	}
+	.Espana p2{
+		font-size: 30px;
+	}
+	.Espana h3{
+		font-size: 42px;
+		font-family: sans-serif;
+	}
+	/*Real Madrid 3 - 1 PSG*/
+	.RealMadrid header h1{
+		font-size: 65px;
+		text-align: center;
+		font-weight: bolder;
+	}
+	.RealMadrid p2{
+		font-size: 30px;
+		text-align: justify;
+	}
+	.RealMadrid p1{
+		font-size: 30px;
+		
+	}
+	.RealMadrid p3{
+		font-size: 30px;
+		text-align: justify;
+	}
+
+	.RealMadrid p4{
+		font-size: 43px;
+		text-align: center;
+	}
+	.RealMadrid{
+		width: 100%;
+		height:600px;
+		padding: 0;
+		align-content: center;
+	}
+
+	.RealMadrid p1 img{
+		width: 70%;
+		display: flex;
+		margin: auto;
+	}
+	.RealMadrid p2 img{
+		width: 70%;
+		display: flex;
+		margin: auto;
+	}
+
+	.RealMadrid p3 img{
+		width: 70%;
+		display: flex;
+		margin: auto;
+	}
+	/* Real Madrid Femenino*/
+	.SPHvsRMA{
+		padding: 0;
+	}
+	.SPHvsRMA header h1{
+		font-size: 60px;
+		text-align: center;
+	}
+	/*El Bicho */
+
+	.portugal{
+		width: 100%;
+		height:600px;
+		padding: 0;
+		align-content: center;
+	}
+	.portugal header h1{
+		font-size: 65px;
+		text-align: center;
+	}
+	.portugal p{
+		font-size: 30px;
+		text-align: justify;
+	}
+	.portugal img{
+		width: 100%;
+	}
+
+	/*Futbol gratis*/
+
+	.Tabla{
+		display: grid;
+		grid-template-columns: repeat(3, 5fr);
+	}
+	.Tabla ul {
+		padding: 25px;
+		margin: -10px;
+		height: auto;
+	}
+	.Tabla ul h4{
+		font-size: 30px;
+	}
+	.Tabla ul a{
+		font-size: 20px;
+	}
+	.Mundial a:hover{
+		border-bottom: 2px solid #ffffff;
+	}
+	.LaLiga a:hover{
+		border-bottom: 2px solid #ffffff;
+	}
+	.Champions a:hover{
+		border-bottom: 2px solid #ffffff;
+	}
+	.DAZN a:hover{
+		border-bottom: 2px solid #ffffff;
+	}
+	.Deportes a:hover{
+		border-bottom: 2px solid #FFFFFF;
+	}
+	.Femenino a:hover{
+		border-bottom: 2px solid #FFFFFF;
+	}
+	.Acestream{
+		font-size: 25px;
+	}
+	.Acestream a:hover{
+		border-bottom: 2px solid #ffffff;
+		
+	}
+
+
+	/* FOOTER */
+
+	.footer-links{
+		background: #2f3640;
+		color: #616161;
+		font-size: 12px;
+		padding: 35px 0;
+	}
+
+	.footer-container{
+		display: grid;
+		grid-template-columns:repeat(4, 1fr);
+		gap: 10px;
+		align-items: flex-start;
+		justify-content: center;
+	}
+	.footer-container ul{
+		margin: 0 auto;
+	}
+	.footer-container ul li{
+		line-height: 1.8;
+	}
+
+	/* Adaptación movil */
+
 	@media (max-width: 700px){
 		.nav-main ul.nav-menu-right{
 			margin-right: 40px;
@@ -96,9 +441,9 @@
 		.Tabla{
 			grid-template-columns: repeat(2, 5fr);
 		}
-			
 
 	}
+
 	@media (max-width: 500px){
 		.articulos{
 			grid-template-columns: 1fr;
@@ -118,6 +463,7 @@
 			background-color: #000000;
 		}
 	}
+
 
 </style>
 </head>
